@@ -1,0 +1,51 @@
+﻿<Page x:Class="Stolovyy_pribor.AddPage.AddPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Stolovyy_pribor.AddPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
+            <ColumnDefinition Width="200*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Style="{StaticResource TextBlockMainStyle}" Height='30' Width="150" Text='Название:' Grid.Row="0" HorizontalAlignment="Stretch"></TextBlock>
+        <TextBlock Style="{StaticResource TextBlockMainStyle}" Height='30' Width="150" Text='Категория:' Grid.Row="1"></TextBlock>
+        <TextBlock Style="{StaticResource TextBlockMainStyle}" Height='30' Width="150" Text='Кол-во на складе:' Grid.Row="2"></TextBlock>
+        <TextBlock Style="{StaticResource TextBlockMainStyle}" Height='30' Width="150" Text='Ед измерения:' Grid.Row="3"></TextBlock>
+        <TextBlock Style="{StaticResource TextBlockMainStyle}" Height='30' Width="150" Text='Поставщик:' Grid.Row="4"></TextBlock>
+        <TextBlock Style="{StaticResource TextBlockMainStyle}" Height='30' Width="150" Text='Фото:' Grid.Row="5"></TextBlock>
+        <TextBlock Style="{StaticResource TextBlockMainStyle}" Height='30' Width="150" Text='Описание:' Grid.Row="6"></TextBlock>
+        <TextBlock Style="{StaticResource TextBlockMainStyle}" Height='30' Width="150" Text='Цена:' Grid.Row="7"></TextBlock>
+
+
+        <TextBox  Name="tbName" Text="{Binding ProductName}" Style="{StaticResource TextBoxMainStyle}" HorizontalAlignment="Center" Width="200" Height='30' Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="2,2,250,2"></TextBox>
+        <ComboBox Name="cbCat" SelectedItem="{Binding TypeCategory.TypeCategoryNAme}" Style="{StaticResource ComboBoxMainStyle}" DisplayMemberPath="Name" HorizontalAlignment="Center" Width="200" Height='30' Grid.Row="1" Grid.Column="1" Margin="2,2,250,2"></ComboBox>
+        <TextBox Name="tbColvo"  Text="{Binding ProductQuantityInStock}" Style="{StaticResource TextBoxMainStyle}" HorizontalAlignment="Center" Width="200" Height='30' Grid.Row="2" Grid.Column="1" Margin="2,2,250,2"></TextBox>
+        <TextBox Name="tbEz"  Text="{Binding ProductEdzm}" Style="{StaticResource TextBoxMainStyle}"  HorizontalAlignment="Center" Width="200" Height='30' Grid.Row="3" Grid.Column="1" Margin="2,2,250,2"></TextBox>
+        <TextBox Name="tbSup" Text="{Binding TypeSuppluer.TypeSuppluerName}" Style="{StaticResource TextBoxMainStyle}" HorizontalAlignment="Center" Width="200" Height='30' Grid.Row="4" Grid.Column="1" Margin="2,2,250,2"></TextBox>
+        <Button Style="{StaticResource ButtonMainStyle}" x:Name="AddProductImageProduct" Content="Изменить картинку" HorizontalAlignment="Center" Width="200" Height='30' Grid.Row="5" Grid.Column="1" Margin="2,2,250,2" Click="AddProductImageProduct_Click" />
+        <TextBox Name="tbOpis" Text="{Binding ProductDescription}" Style="{StaticResource TextBoxMainStyle}" HorizontalAlignment="Center" Width="200" Height='30' Grid.Row="6" Grid.Column="1" Margin="2,2,250,2"></TextBox>
+        <TextBox Name="tbPrice" Text="{Binding ProductCost}" Style="{StaticResource TextBoxMainStyle}" HorizontalAlignment="Center" Width="200" Height='30' Grid.Row="7" Grid.Column="1" Margin="2,2,250,2"></TextBox>
+        <StackPanel  Style="{StaticResource StackPanelMainStyle}" Grid.Column="8" Grid.Row="8"> 
+            <Button Click="Add_date" Content="Сохранить"  Style="{StaticResource ButtonMainStyle}" Grid.Row="8" Grid.Column="2" Height="30" Width="200" HorizontalAlignment="Left"></Button>
+            <Button x:Name="Button_Click_Nazad" Content="Назад"  Style="{StaticResource ButtonMainStyle}" Grid.Row="7" Grid.Column="3" Height="30" Width="200" HorizontalAlignment="Left" Click="Button_Click_Nazad_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
